@@ -21,4 +21,10 @@ Un temps de 10 secondes s'écoule entre chaque réponse.
 
 A la fin de la partie, le score est affiché, le joueur peut entrer son pseudo pour ajouté son score dans le tableau des scores.
 
-Un bouton rejouer (/drapeau.ejs/ ou /pays.ejs/) apparait ainsi qu'un bouton retour à l'accueil (/index.ejs/).
+Un bouton rejouer (/drapeau.ejs/ ou /pays.ejs/) apparait ainsi qu'un bouton retour à l'accueil (/index.ejs/).*
+
+
+Liens utiles :
+
+Valeur aléatoire tableau js :
+https://www.web-dev-qa-db-fra.com/fr/javascript/obtenir-une-valeur-aleatoire-dun-tableau-javascript/970253829/s
