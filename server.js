@@ -9,7 +9,10 @@ app.use(express.static(__dirname + '/www'));
 app.use('/js',express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 app.use('/js',express.static(__dirname + '/node_modules/@popperjs/core/dist/umd'));
 app.use('/js',express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/img',express.static(__dirname + '/views/img'));
+app.use('/css',express.static(__dirname + '/views/css'));
 app.use('/css',express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+
 app.use('/views',express.static(__dirname + '/views'));//redirect views
 app.use(bodyparser.urlencoded({extended : false}));
 app.use(bodyparser.json());
