@@ -8,8 +8,11 @@ app.listen(port, () => {
 });
 
 app.get('/',(req, res, next) => {
-    res.send('Bonjour !');
+    res.render('question.ejs');
 });
+
+app.set("view engine", "ejs");
+app.use("/views", express.static(__dirname+'/views'));
 
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
