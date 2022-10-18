@@ -10,3 +10,12 @@ app.listen(port, () => {
 app.get('/',(req, res, next) => {
     res.send('Bonjour !');
 });
+
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/js', express.static(__dirname + '/node_modules/@popperjs/core/dist/umd'));
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+
+
+
+
