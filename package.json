@@ -1,0 +1,26 @@
+{
+  "name": "flagame",
+  "version": "1.0.0",
+  "description": "Flagame est un jeu où il faut trouver le pays selon les drapeaux de pays.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VirgilGR/Flagame.git"
+  },
+  "author": "VIRGIL - SIMON - VALENTIN - ERWANN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VirgilGR/Flagame/issues"
+  },
+  "homepage": "https://github.com/VirgilGR/Flagame#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "jquery": "^3.6.1"
+  }
+}
