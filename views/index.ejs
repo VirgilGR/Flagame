@@ -1,8 +1,26 @@
 <%- include('header');%>
-
-<div class="row">
-    <div class="col-md-4 offset-md-1 border border-primary">
+<%- include('pays');%>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-12 text-center">
+            <h1>Quel est le drapeau du <span id="pays"></span> ?</h1>
+        </div>
+        <div class="col-md-8">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-5 border border-primary">
+                    <a href="#"><img src="" id="img1" style="width:40%;" class="mx-auto d-block"> </a>
+                </div>
+                <div class="col-md-5 border border-primary">
+                    <a href="#"><img src="" id="img2" style="width:40%;" class="mx-auto d-block"> </a>
+                </div>
+                <div class="col-md-5 border border-primary">
+                    <a href="#"><img src="" id="img3" style="width:40%;" class="mx-auto d-block"> </a>
+                </div>
+                <div class="col-md-5 border border-primary" >
+                    <a href="#"><img src="" id="img4" style="width:40%;" class="mx-auto d-block"> </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
 <%- include('footer');%>
