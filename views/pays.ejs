@@ -1,5 +1,13 @@
 <script>
     window.addEventListener('load', function () {
+        const reload = document.getElementById("reload");
+        reload.addEventListener('click', tirer);
+
+        const start = document.getElementById("start");
+        start.addEventListener('click', tirer);
+
+        const finish = document.getElementById("finish");
+        finish.addEventListener('click', end);
 
         let pays = ["Allemagne", "Autriche", "Belgique", "Danemark", "Espagne", "Estonie", "Finlande", "France", "Grece", "Italie", "Luxembourg", "Pays-bas", "Pologne", "Portugal", "Republique-tcheque", "Roumanie", "Royaume-uni", "Russie", "Suede", "Ukraine"];
         let image = ["allemagne.png", "autriche.png", "belgique.png", "danemark.png", "espagne.png", "estonie.png", "finlande.png", "france.png", "grece.png", "italie.png", "luxembourg.png", "pays-bas.png", "pologne.png", "portugal.png", "republique-tcheque.png", "roumanie.png", "royaume-uni.png", "russie.png", "suede.png", "ukraine.png"];
@@ -8,32 +16,38 @@
             return Math.floor(Math.random() * max);
         }
 
-        var  list= []; // Liste pour stocker les 4 propositon de réponces 
-
-        for (let pas = 0; pas < 4; pas++) { // Tirage de 4 drapeaux aleatoire
-            var choix = (getRandomInt(pays.length));
-
-            for (let verif = 0; verif < list.length; verif++) { // Verif si drapeau pas deja tiré
-                if(choix==list[verif]){
-                    choix = (getRandomInt(pays.length));
-                    verif=verif-1;
-                }
+        function tirer() { //function pour tirer au sors les 4 drapeaux et la question 
+            for (let z = 1; z < 5; z++) { // Tirage de 4 drapeaux aleatoire
+            document.getElementById("case"+z).classList.remove("bg-success");
+            document.getElementById("case"+z).classList.remove("bg-danger");
             }
-            list.push(choix);//
-        }
+            var  list= []; // Liste pour stocker les 4 propositon de réponces 
+            for (let pas = 0; pas < 4; pas++) { // Tirage de 4 drapeaux aleatoire
+                var choix = (getRandomInt(pays.length));
 
-        console.log(list);
+                for (let verif = 0; verif < list.length; verif++) { // Verif si drapeau pas deja tiré
+                    if(choix==list[verif]){
+                        choix = (getRandomInt(pays.length));
+                        verif=verif-1;
+                    }
+                }
+                list.push(choix);//
+            }
+            //console.log(list);     //affichage des éléments tirer dans la console
+            var qst = (getRandomInt(4)); // Choix aleatoire de la question par rapport au 4 choix du dessus
+            var question = pays[list[qst]];
+            sessionStorage.setItem('question', question);
+            document.getElementById("pays").innerHTML = question; //affichage de la question dans l'index
 
-        var qst = (getRandomInt(4)); // Choix aleatoir de la question par rapport au 4 choix du dessus
-        var question = pays[list[qst]];
-        sessionStorage.setItem('question', question);
-        document.getElementById("pays").innerHTML = question; //affichage de la question dans l'index
+            for (let y = 1; y < 5; y++) { // affichage des 4 element
+                document.getElementById("img"+y).src = "views/img/flag/" +image[list[(y-1)]]+ "";
+                document.getElementById("rep"+y).setAttribute('onclick',"verif('"+pays[list[(y-1)]]+"','case"+y+"')");
+            }
+        };
 
-        for (let y = 1; y < 5; y++) { // affichage des 4 element
-            document.getElementById("img"+y).src = "views/img/flag/" +image[list[(y-1)]]+ "";
-            document.getElementById("rep"+y).setAttribute('onclick',"verif('"+pays[list[(y-1)]]+"','case"+y+"')");
-        }
-
+        function end() {
+            console.log("c'est fini");
+        };
     });
     
     function verif(pays,block){
@@ -42,16 +56,27 @@
         console.log("voici le "+pays);
         console.log(question +" " +verifpays);
         
-            if (verifpays.toString()==question.toString()){
+        if (verifpays.toString()==question.toString()){
                 console.log("Bonne reponse")
-                
-                document.getElementById(block).classList.add("bg-success");
+                var data = sessionStorage.getItem("score");
+
+            if (data>0){
+                console.log('je passe las ')
+                data = parseInt(data)+1;
+                sessionStorage.setItem('score', data);
             }
             else{
-                console.log("Mauvaise reponse")
-
-                document.getElementById(block).classList.add("bg-danger");
-            }   
-            
+                sessionStorage.setItem('score', 1);
+            }
+            document.getElementById(block).classList.add("bg-success");
         }
+        else{
+            console.log("Mauvaise reponse")
+            document.getElementById(block).classList.add("bg-danger");
+        }
+        for (var i = 1; i < 5; i++) { // affichage des 4 element
+            document.getElementById("rep"+i).setAttribute('onclick',"");
+        }
+    }
+
 </script>
