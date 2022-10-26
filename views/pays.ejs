@@ -24,22 +24,34 @@
 
         console.log(list);
 
-        var image1 = image[list[0]]; //Ajouter le drapeaux choisi a image 1
-        var image2 = image[list[1]]; //Ajouter le drapeaux choisi a image 2
-        var image3 = image[list[2]]; //Ajouter le drapeaux choisi a image 3
-        var image4 = image[list[3]]; //Ajouter le drapeaux choisi a image 4
-
-        var qst = (getRandomInt(3)); // Choix aleatoir de la question par rapport au 4 choix du dessus
-        console.log(qst);
+        var qst = (getRandomInt(4)); // Choix aleatoir de la question par rapport au 4 choix du dessus
         var question = pays[list[qst]];
-
-
+        sessionStorage.setItem('question', question);
         document.getElementById("pays").innerHTML = question; //affichage de la question dans l'index
 
-        document.getElementById("img1").src = "views/img/flag/" + image1 + "";//affichage de la question dans l'index
-        document.getElementById("img2").src = "views/img/flag/" + image2 + "";//affichage de la question dans l'index
-        document.getElementById("img3").src = "views/img/flag/" + image3 + "";//affichage de la question dans l'index
-        document.getElementById("img4").src = "views/img/flag/" + image4 + "";//affichage de la question dans l'index
+        for (let y = 1; y < 5; y++) { // affichage des 4 element
+            document.getElementById("img"+y).src = "views/img/flag/" +image[list[(y-1)]]+ "";
+            document.getElementById("rep"+y).setAttribute('onclick',"verif('"+pays[list[(y-1)]]+"','case"+y+"')");
+        }
 
     });
+    
+    function verif(pays,block){
+        var question = sessionStorage.getItem('question');
+        var verifpays = pays;
+        console.log("voici le "+pays);
+        console.log(question +" " +verifpays);
+        
+            if (verifpays.toString()==question.toString()){
+                console.log("Bonne reponse")
+                
+                document.getElementById(block).classList.add("bg-success");
+            }
+            else{
+                console.log("Mauvaise reponse")
+
+                document.getElementById(block).classList.add("bg-danger");
+            }   
+            
+        }
 </script>
