@@ -1,5 +1,6 @@
 body,html {
-    font-family:din-round,sans-serif; ;
+    font-family:din-round,sans-serif; 
+    cursor: url(../../views/img/cursor.svg), auto;
 }
 h2 {
     text-transform: uppercase;
@@ -83,6 +84,11 @@ footer{
   justify-content: center;
   align-items: center;
   height: 15vh;
+  cursor: url(../../views/img/cursor1.svg), auto;
+}
+
+.cursor:hover, .button-19:hover{
+  cursor: url(../../views/img/cursor1.svg), auto;
 }
 
 body{
