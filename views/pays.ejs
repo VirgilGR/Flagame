@@ -25,6 +25,7 @@
             start.style.display = 'none';
             reload.style.display = 'block';
         }
+
         function tirer() { //function pour tirer au sors les 4 drapeaux et la question
 
             for (let z = 1; z < 5; z++) { // Tirage de 4 drapeaux aleatoire
@@ -43,11 +44,25 @@
                 }
                 list.push(choix);//
             }
-            //console.log(list);     //affichage des éléments tirer dans la console
+            //affichage des éléments tirer dans la console
             var qst = (getRandomInt(4)); // Choix aleatoire de la question par rapport au 4 choix du dessus
             var question = pays[list[qst]];
+
+             for(let y = 0; y < listetire.length; y++){
+                    console.log('test')
+                if(question==listetire[y]){
+                    console.log("doublon");
+                    var qst = (getRandomInt(4)); // Choix aleatoire de la question par rapport au 4 choix du dessus
+                    var question = pays[list[qst]];
+                        y=y-1;
+                    }
+            }
+
             sessionStorage.setItem('question', question);
             document.getElementById("pays").innerHTML = question; //affichage de la question dans l'index
+
+            listetire.push(question);
+            console.log(listetire);
 
             for (let y = 1; y < 5; y++) { // affichage des 4 element
                 document.getElementById("img"+y).src = "views/img/flag/" +image[list[(y-1)]]+ "";
