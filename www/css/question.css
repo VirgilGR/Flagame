@@ -1,5 +1,6 @@
 body,html {
-    font-family:din-round,sans-serif; ;
+    font-family:din-round,sans-serif; 
+    cursor: url(../../views/img/cursor.svg), auto;
 }
 .description {
   margin-top: 50px;
@@ -74,4 +75,30 @@ h2 {
 
 #start, #reload, #finish {
   margin:5px;
+}
+
+footer{
+  position: fixed;
+  top: 97vh;
+}
+
+#case1, #case2, #case3, #case4{
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  cursor: url(../../views/img/cursor1.svg), auto;
+}
+
+.cursor:hover, .button-19:hover{
+  cursor: url(../../views/img/cursor1.svg), auto;
+}
+
+body{
+  height: 100vh;
+}
+
+.container{
+  margin-top: 18vh;
 }
