@@ -1,4 +1,6 @@
 body,html {
+  width: 100vw;
+  height: 100vh;
     font-family:din-round,sans-serif; 
     cursor: url(../../views/img/cursor.svg), auto;
 }
@@ -75,6 +77,14 @@ h2 {
 
 #start, #reload, #finish {
   margin:5px;
+  width: 67vw;
+}
+
+.commence{
+  position: absolute;
+  top: 40vh;
+  height: 20vh;
+
 }
 
 footer{
@@ -101,4 +111,8 @@ body{
 
 .container{
   margin-top: 18vh;
+}
+
+h1{
+  font-size: 3rem;
 }
