@@ -19,6 +19,9 @@
         let image = ["allemagne.png", "autriche.png", "belgique.png", "danemark.png", "espagne.png", "estonie.png", "finlande.png", "france.png", "grece.png", "italie.png", "luxembourg.png", "pays-bas.png", "pologne.png", "portugal.png", "republique-tcheque.png", "roumanie.png", "royaume-uni.png", "russie.png", "suede.png", "ukraine.png"];
         let listetire=[];
 
+        let listNom=[];
+        let listScore=[];
+
         function jeux() {
             document.getElementById("jeux").style.display = 'block'
         }
@@ -77,7 +80,15 @@
 
         function end() {
             var score = sessionStorage.getItem("score");
+            var nom = prompt("Entrez votre nom: ", "Votre nom");
+            listNom.push(nom);
+            listScore.push(score);
+
+            console.log(listNom);
+            console.log(listScore);
+
             alert("Vous avez un score de : "+score+"/10");
+
             window.location.href = "/";
         };
     });
