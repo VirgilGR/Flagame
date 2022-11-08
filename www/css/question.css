@@ -71,3 +71,24 @@ h2 {
 #start, #reload, #finish {
   margin:5px;
 }
+
+footer{
+  position: fixed;
+  top: 97vh;
+}
+
+#case1, #case2, #case3, #case4{
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+}
+
+body{
+  height: 100vh;
+}
+
+.container{
+  margin-top: 18vh;
+}
