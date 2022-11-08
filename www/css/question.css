@@ -67,3 +67,7 @@ h2 {
 .button-19:disabled {
   cursor: auto;
 }
+
+#start, #reload, #finish {
+  margin:5px;
+}
