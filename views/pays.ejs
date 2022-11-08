@@ -10,6 +10,7 @@
         start.addEventListener('click', cacherS);
         start.addEventListener('click', resetLocal);
         start.addEventListener('click', compteur);
+        start.addEventListener('click', jeux);
 
         const finish = document.getElementById("finish");
         finish.addEventListener('click', end);
@@ -17,6 +18,10 @@
         let pays = ["Allemagne", "Autriche", "Belgique", "Danemark", "Espagne", "Estonie", "Finlande", "France", "Grece", "Italie", "Luxembourg", "Pays-bas", "Pologne", "Portugal", "Republique-tcheque", "Roumanie", "Royaume-uni", "Russie", "Suede", "Ukraine"];
         let image = ["allemagne.png", "autriche.png", "belgique.png", "danemark.png", "espagne.png", "estonie.png", "finlande.png", "france.png", "grece.png", "italie.png", "luxembourg.png", "pays-bas.png", "pologne.png", "portugal.png", "republique-tcheque.png", "roumanie.png", "royaume-uni.png", "russie.png", "suede.png", "ukraine.png"];
         let listetire=[];
+
+        function jeux() {
+            document.getElementById("jeux").style.display = 'block'
+        }
 
         function getRandomInt(max) { // Fonction pour le choix alealtoi
             return Math.floor(Math.random() * max);
@@ -73,6 +78,7 @@
         function end() {
             var score = sessionStorage.getItem("score");
             alert("Vous avez un score de : "+score+"/10");
+            window.location.href = "/";
         };
     });
     

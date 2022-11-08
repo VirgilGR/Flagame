@@ -22,5 +22,10 @@ app.listen(port, () => {
 
 app.get('/',(req,res,next) => {
     // res.sendFile('www/index.html');
+    res.render('accueil.ejs');
+});
+
+app.get('/index.ejs',(req,res,next) => {
+    // res.sendFile('www/index.html');
     res.render('index.ejs');
 });

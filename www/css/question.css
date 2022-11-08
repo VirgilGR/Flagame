@@ -1,6 +1,10 @@
 body,html {
     font-family:din-round,sans-serif; ;
 }
+.description {
+  margin-top: 50px;
+  font-size: 32px;
+}
 h2 {
     text-transform: uppercase;
     font-weight: 700;
