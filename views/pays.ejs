@@ -3,9 +3,13 @@
 
         const reload = document.getElementById("reload");
         reload.addEventListener('click', tirer);
+        reload.addEventListener('click', compteur);
 
         const start = document.getElementById("start");
         start.addEventListener('click', tirer);
+        start.addEventListener('click', cacherS);
+        start.addEventListener('click', resetLocal);
+        start.addEventListener('click', compteur);
 
         const finish = document.getElementById("finish");
         finish.addEventListener('click', end);
@@ -17,8 +21,12 @@
         function getRandomInt(max) { // Fonction pour le choix alealtoi
             return Math.floor(Math.random() * max);
         }
+        function cacherS(){
+            start.style.display = 'none';
+            reload.style.display = 'block';
+        }
+        function tirer() { //function pour tirer au sors les 4 drapeaux et la question
 
-        function tirer() { //function pour tirer au sors les 4 drapeaux et la question 
             for (let z = 1; z < 5; z++) { // Tirage de 4 drapeaux aleatoire
             document.getElementById("case"+z).classList.remove("bg-success");
             document.getElementById("case"+z).classList.remove("bg-danger");
@@ -48,7 +56,8 @@
         };
 
         function end() {
-            console.log("c'est fini"); // function qui va afficher le score 
+            var score = sessionStorage.getItem("score");
+            alert("Vous avez un score de : "+score+"/10");
         };
     });
     
@@ -76,6 +85,28 @@
         for (var i = 1; i < 5; i++) { // affichage des 4 element
             document.getElementById("rep"+i).setAttribute('onclick',"");
         }
+    }
+    function compteur(){
+        var compteur = sessionStorage.getItem("compteur");
+        if (compteur==9){
+            reload.style.display="none";
+            finish.style.display="block";
+        }
+        else{
+            if (compteur>0){
+                compteur = parseInt(compteur)+1;              // +1 dans le local storage si il existe deja
+                sessionStorage.setItem('compteur', compteur);
+            }
+            else{                                       // +1 dans le local storage si il n'existe pas
+                sessionStorage.setItem('compteur', 1);
+            }
+        }
+    }
+    function resetLocal(){
+        console.log("je passe iic");
+        sessionStorage.setItem('score', 0);
+
+        sessionStorage.setItem('compteur', 0);
     }
 
 </script>
