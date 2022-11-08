@@ -1,0 +1,30 @@
+Brief du site :
+FLAGAME : jeux sur les pays et les drapeaux de l'europe.
+
+/index.ejs/
+Le joueur choisi entre le jeu 1 (quel drapeau ?) et le jeu 2 (quel pays ?)
+
+/drapeau.ejs/ ou /pays.ejs/
+Le joueur  appuie sur Jouer.
+
+La partie se lance et il y a une série de 10 questions de 2 types différents :
+- un drapeau apparait avec 4 propositions de pays dont 1 bonne réponse
+(A quel pays appartient ce drapeau ?)
+- un pays apparait avec 4 propositions de drapeau dont 1 bonne réponse
+(Quel est le drapeau du pays : NomDuPays ?)
+
+Entre chaque question et à chaque fois que le joueur sélectionne une réponse, une fenêtre apparaît :
+- bonne réponse ! (fond vert)
+- mauvaise réponse, le drapeau du pays NomDuPays est ... (fond rouge)
+
+Un temps de 10 secondes s'écoule entre chaque réponse.
+
+A la fin de la partie, le score est affiché, le joueur peut entrer son pseudo pour ajouté son score dans le tableau des scores.
+
+Un bouton rejouer (/drapeau.ejs/ ou /pays.ejs/) apparait ainsi qu'un bouton retour à l'accueil (/index.ejs/).*
+
+
+Liens utiles :
+
+Valeur aléatoire tableau js :
+https://www.web-dev-qa-db-fra.com/fr/javascript/obtenir-une-valeur-aleatoire-dun-tableau-javascript/970253829/s
